@@ -1,7 +1,7 @@
 package com.briansdevblog.TestcontainersDatabaseDemo.controller;
 
 import com.briansdevblog.TestcontainersDatabaseDemo.entity.Customer;
-import com.briansdevblog.TestcontainersDatabaseDemo.repository.CustomerRepository;
+import com.briansdevblog.TestcontainersDatabaseDemo.repository.CustomerDao;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -13,13 +13,13 @@ import java.util.Optional;
 @AllArgsConstructor
 public class CustomerController {
 
-    private CustomerRepository customerRepository;
+    private CustomerDao customerDao;
 
     @PostMapping(path = "/api/customer")
     public @ResponseBody Customer createCustomer(Customer customer){
 
         log.info("saving [{}]", customer);
-        Customer persistedCustomer = customerRepository.save(customer);
+        Customer persistedCustomer = customerDao.save(customer);
         log.info("returning [{}]", persistedCustomer);
 
         return persistedCustomer;
@@ -29,7 +29,7 @@ public class CustomerController {
     public Customer getCustomer(@PathVariable("{id}") Long customerId){
 
         log.info("retrieving customer Id [{}]", customerId);
-        Optional<Customer> customer = customerRepository.findById(customerId);
+        Optional<Customer> customer = customerDao.findById(customerId +"");
         log.info("returning [{}]", customer);
 
         return customer.orElseThrow(() -> new RuntimeException("customer not found for Id " + customerId));
