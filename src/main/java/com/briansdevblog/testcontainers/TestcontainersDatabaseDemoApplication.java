@@ -1,9 +1,10 @@
-package com.briansdevblog.TestcontainersDatabaseDemo;
+package com.briansdevblog.testcontainers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
-@SpringBootApplication
+@SpringBootApplication(exclude= HibernateJpaAutoConfiguration.class)
 public class TestcontainersDatabaseDemoApplication {
 
 	public static void main(String[] args) {

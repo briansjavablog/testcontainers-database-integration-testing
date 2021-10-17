@@ -1,4 +1,4 @@
-package com.briansdevblog.TestcontainersDatabaseDemo;
+package com.briansdevblog.testcontainers.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

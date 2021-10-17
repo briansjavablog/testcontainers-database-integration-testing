@@ -1,11 +1,11 @@
 
 CREATE TABLE Customer (
-     id int,
-     firstName varchar(255),
-     lastName varchar(255),
-     dateOfBirth varchar(255),
-     gender varchar(255)
+     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+     firstName VARCHAR(255),
+     lastName VARCHAR(255),
+     dateOfBirth VARCHAR(255),
+     gender VARCHAR(255)
 );
 
-INSERT INTO Customer (firstName, lastName, dateOfBirth, gender)
-VALUES ('Joe', 'Bloggs', '17-05-1983', 'male');
+INSERT INTO Customer (id, firstName, lastName, dateOfBirth, gender) VALUES (1, 'Joe', 'Bloggs', '1983-05-17', 'male');
+INSERT INTO Customer (id, firstName, lastName, dateOfBirth, gender) VALUES (2, 'Jill', 'Bloggs', '1984-08-19', 'female');

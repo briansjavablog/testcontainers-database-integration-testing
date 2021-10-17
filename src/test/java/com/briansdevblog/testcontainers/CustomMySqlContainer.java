@@ -1,4 +1,4 @@
-package com.briansdevblog.TestcontainersDatabaseDemo;
+package com.briansdevblog.testcontainers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.testcontainers.containers.MySQLContainer;

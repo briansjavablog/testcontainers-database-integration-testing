@@ -1,6 +1,6 @@
-package com.briansdevblog.TestcontainersDatabaseDemo.repository;
+package com.briansdevblog.testcontainers.dao;
 
-import com.briansdevblog.TestcontainersDatabaseDemo.entity.Customer;
+import com.briansdevblog.testcontainers.entity.Customer;
 import lombok.AllArgsConstructor;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -26,14 +26,16 @@ public class CustomerDao {
         return query.list();
     }
 
-    public Optional<Customer> findById(String customerId){
+    @Transactional
+    public Optional<Customer> findById(Long customerId){
 
         return Optional.ofNullable(sessionFactory.getCurrentSession().get(Customer.class, customerId));
     }
 
-    public Customer save(Customer customer){
+    @Transactional
+    public Long save(Customer customer){
 
-        return (Customer) sessionFactory.getCurrentSession().save(customer);
+        return (Long)sessionFactory.getCurrentSession().save(customer);
     }
 
 }
