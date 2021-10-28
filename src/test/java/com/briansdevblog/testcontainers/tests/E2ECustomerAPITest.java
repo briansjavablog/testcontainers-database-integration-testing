@@ -20,7 +20,7 @@ import static org.hamcrest.Matchers.notNullValue;
 
 @Testcontainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class CustomerAPITest {
+class E2ECustomerAPITest {
 
 	@Autowired
 	private TestRestTemplate restTemplate;
